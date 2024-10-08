@@ -2,6 +2,7 @@
 
 # dependencies
 node_modules
+NPM-Package.txt
 /.pnp
 .pnp.js
 
