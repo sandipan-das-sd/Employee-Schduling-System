@@ -85,26 +85,22 @@ export default function SlideNavbar() {
                 
                 className="NavBody sidebar-link collapsed has-dropdown"
                 data-bs-toggle="collapse"
-                data-bs-target="#Department"
+                data-bs-target="#Task"
                 aria-expanded="false"
-                aria-controls="Department"
+                aria-controls="Task"
               >
                 <i className="fa-solid fa-boxes-stacked"></i>
-                <span>Department</span>
+                <span>Task Schedule</span>
               </NavLink>
               <ul
-                id="Department"
+                id="Task"
                 className="sidebar-dropdown list-unstyled collapse"
                 data-bs-parent="#sidebar"
               >
+                
                 <li className="sidebar-item">
-                  <NavLink to="/addDepartment" className="NavBody sidebar-link">
-                    Add Department
-                  </NavLink>
-                </li>
-                <li className="sidebar-item">
-                  <NavLink to="/manageDepartment" className="NavBody sidebar-link">
-                    Manage Department
+                  <NavLink to="/editTask" className="NavBody sidebar-link">
+                    Edit Task
                   </NavLink>
                 </li>
               </ul>
@@ -134,42 +130,13 @@ export default function SlideNavbar() {
                 </li>
                 <li className="sidebar-item">
                   <NavLink to="/manageStaff" className="NavBody sidebar-link">
-                    Manage Staff
+                    Edit Staff
                   </NavLink>
                 </li>
               </ul>
             </li>
 
-            <li className="sidebar-item">
-              <NavLink
-                
-                className="NavBody sidebar-link collapsed has-dropdown"
-                data-bs-toggle="collapse"
-                data-bs-target="#Salary"
-                aria-expanded="false"
-                aria-controls="Salary"
-              >
-                <i className="fa-solid fa-sack-dollar"></i>
-                <span>Salary</span>
-              </NavLink>
-              <ul
-                id="Salary"
-                className="sidebar-dropdown list-unstyled collapse"
-                data-bs-parent="#sidebar"
-              >
-                <li className="sidebar-item">
-                  <NavLink to="/addSalary" className="NavBody sidebar-link">
-                    Add Salary
-                  </NavLink>
-                </li>
-                
-                <li className="sidebar-item">
-                  <NavLink to="/manageSalary" className="NavBody sidebar-link">
-                    Manage Salary
-                  </NavLink>
-                </li>
-              </ul>
-            </li>
+            
 
             <li className="sidebar-item">
               <NavLink
@@ -188,16 +155,16 @@ export default function SlideNavbar() {
                 className="sidebar-dropdown list-unstyled collapse"
                 data-bs-parent="#sidebar"
               >
-                {/* <li className="sidebar-item">
+                <li className="sidebar-item">
                   <NavLink to="/applyLeave" className="NavBody sidebar-link">
                     Apply Leave
                   </NavLink>
-                </li> */}
-                {/* <li className="sidebar-item">
+                </li>
+                <li className="sidebar-item">
                   <NavLink to="/leaveHistory" className="NavBody sidebar-link">
                     Leave History
                   </NavLink>
-                </li> */}
+                </li>
                 <li className="sidebar-item">
                   <NavLink to="/Staffleave" className="NavBody sidebar-link">
                     Staff's Leave
@@ -215,7 +182,7 @@ export default function SlideNavbar() {
                 aria-controls="Admin"
               >
                 <i class="fas fa-user-shield"></i>
-                <span>Admin</span>
+                <span>Manager</span>
               </NavLink>
               <ul
                 id="Admin"
@@ -224,15 +191,47 @@ export default function SlideNavbar() {
               >
                 <li className="sidebar-item">
                   <NavLink to="/addAdmin" className="NavBody sidebar-link">
-                    Add Admin
+                    Add Manager
                   </NavLink>
                 </li>
                 <li className="sidebar-item">
                   <NavLink to="/manageAdmin" className="NavBody sidebar-link">
-                    Manage Admin
+                    Edit Manager
                   </NavLink>
                 </li>
               </ul>
+            
+            </li>
+            <li className="sidebar-item">
+              <NavLink
+                
+                className="NavBody sidebar-link collapsed has-dropdown"
+                data-bs-toggle="collapse"
+                data-bs-target="#Owner"
+                aria-expanded="false"
+                aria-controls="Owner"
+              >
+                <i class="fas fa-user-plus"></i>
+                <span>Owner</span>
+              </NavLink>
+              <ul
+                id="Owner"
+                className="sidebar-dropdown list-unstyled collapse"
+                data-bs-parent="#sidebar"
+              >
+              
+                <li className="sidebar-item">
+                  <NavLink to="/addOwner" className="NavBody sidebar-link">
+                    Add Owner
+                  </NavLink>
+                </li>
+                <li className="sidebar-item">
+                  <NavLink to="/manageOwner" className="NavBody sidebar-link">
+                    Edit Owner
+                  </NavLink>
+                </li>
+              </ul>
+            
             </li>
           </ul>
           <hr className=" border-1 text-white m-0" style={{ background: "#586682b0" }}/>

@@ -1,27 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from 'react-router-dom';
-import Test from './components/Test';
-import SlideNavbar from './components/SlideNavbar';
-import NavBar from './components/NavBar';
-import Dashboard from './components/Dashboard/Dashboard';
-import ApplyLeave from './components/Leave/ApplyLeave';
-import LeaveHistory from './components/Leave/LeaveHistory';
-import ManageSalary from './components/Salary/ManageSalary';
-import YourSalary from './components/Salary/YourSalary';
-import AddSalary from './components/Salary/AddSalary';
-import AddDepartment from './components/Department/AddDepartment';
-import ManageDepartment from './components/Department/ManageDepartment';
-import AddStaff from './components/Staff/Add Staff';
-import ManageStaff from './components/Staff/ManageStaff';
-import Login from './components/Authentication/Login';
-import SignUp from './components/Authentication/SignUp';
-import StaffLeave from './components/Leave/StaffLeave';
-import AddAdmin from './components/Admin/AddAdmin';
-import ManageAdmin from './components/Admin/ManageAdmin';
-import VerifyOTP from './components/Authentication/VerifyOTP';
+import React, { useState, useEffect } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Test from "./components/Test";
+import SlideNavbar from "./components/SlideNavbar";
+import NavBar from "./components/NavBar";
+import Dashboard from "./components/Dashboard/Dashboard";
+import ApplyLeave from "./components/Leave/ApplyLeave";
+import LeaveHistory from "./components/Leave/LeaveHistory";
+
+import AddStaff from "./components/Staff/Add Staff";
+import ManageStaff from "./components/Staff/ManageStaff";
+import Login from "./components/Authentication/Login";
+import SignUp from "./components/Authentication/SignUp";
+import StaffLeave from "./components/Leave/StaffLeave";
+import AddAdmin from "./components/Admin/AddAdmin";
+import ManageAdmin from "./components/Admin/ManageAdmin";
+import VerifyOTP from "./components/Authentication/VerifyOTP";
+import EditTask from "./components/Task/EditTask";
+import AddOwner from "./components/Owner/AddOwner";
+import ManageOwner from "./components/Owner/ManageOwner";
 function App() {
   const [isLargeDevice, setIsLargeDevice] = useState(window.innerWidth >= 1300);
 
@@ -29,95 +25,86 @@ function App() {
     const handleResize = () => {
       setIsLargeDevice(window.innerWidth >= 1300);
     };
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: "/",
       element: (
         <>
-          { <SlideNavbar />}
+          {<SlideNavbar />}
           <NavBar />
           <Dashboard />
         </>
       ),
     },
     {
-      path: '/login',
+      path: "/login",
       element: <Login />,
     },
     {
-      path: '/signup',
+      path: "/signup",
       element: <SignUp />,
     },
+
     {
-      path: '/addDepartment',
+      path: "/addAdmin",
       element: (
         <>
           {isLargeDevice && <SlideNavbar />}
           <NavBar />
-          <AddDepartment />
+          <AddAdmin />
         </>
       ),
     },
     {
-      path: '/addAdmin',
+      path: "/manageAdmin",
       element: (
         <>
           {isLargeDevice && <SlideNavbar />}
           <NavBar />
-          <AddAdmin/>
+          <ManageAdmin />
         </>
       ),
     },
     {
-      path: '/manageAdmin',
+      path: "/editTask",
       element: (
         <>
           {isLargeDevice && <SlideNavbar />}
           <NavBar />
-          <ManageAdmin/>
+          <EditTask/>
         </>
       ),
     },
 
+    {
+      path: "/verify-email",
+      element: (
+        <>
+          {isLargeDevice && <SlideNavbar />}
+          <NavBar />
+          <VerifyOTP />
+        </>
+      ),
+    },
+    {
+      path: "/Staffleave",
+      element: (
+        <>
+          {isLargeDevice && <SlideNavbar />}
+          <NavBar />
+          <StaffLeave />
+        </>
+      ),
+    },
 
     {
-      path: '/verify-email',
-      element: (
-        <>
-          {isLargeDevice && <SlideNavbar />}
-          <NavBar />
-          <VerifyOTP/>
-        </>
-      ),
-    },
-    {
-      path: '/Staffleave',
-      element: (
-        <>
-          {isLargeDevice && <SlideNavbar />}
-          <NavBar />
-          <StaffLeave/>
-        </>
-      ),
-    },
-    {
-      path: '/manageDepartment',
-      element: (
-        <>
-          {isLargeDevice && <SlideNavbar />}
-          <NavBar />
-          <ManageDepartment />
-        </>
-      ),
-    },
-    {
-      path: '/addStaff',
+      path: "/addStaff",
       element: (
         <>
           {isLargeDevice && <SlideNavbar />}
@@ -127,7 +114,7 @@ function App() {
       ),
     },
     {
-      path: '/manageStaff',
+      path: "/manageStaff",
       element: (
         <>
           {isLargeDevice && <SlideNavbar />}
@@ -137,37 +124,28 @@ function App() {
       ),
     },
     {
-      path: '/addSalary',
+      path: "/addOwner",
       element: (
         <>
           {isLargeDevice && <SlideNavbar />}
           <NavBar />
-          <AddSalary />
+          <AddOwner/>
         </>
       ),
     },
     {
-      path: '/manageSalary',
+      path: "/manageOwner",
       element: (
         <>
           {isLargeDevice && <SlideNavbar />}
           <NavBar />
-          <ManageSalary />
+          <ManageOwner/>
         </>
       ),
     },
+
     {
-      path: '/yoursalary',
-      element: (
-        <>
-          {isLargeDevice && <SlideNavbar />}
-          <NavBar />
-          <YourSalary/>
-        </>
-      ),
-    },
-    {
-      path: '/applyLeave',
+      path: "/applyLeave",
       element: (
         <>
           {isLargeDevice && <SlideNavbar />}
@@ -177,7 +155,7 @@ function App() {
       ),
     },
     {
-      path: '/leaveHistory',
+      path: "/leaveHistory",
       element: (
         <>
           {isLargeDevice && <SlideNavbar />}
@@ -187,7 +165,7 @@ function App() {
       ),
     },
     {
-      path: '/test',
+      path: "/test",
       element: <Test />,
     },
   ]);

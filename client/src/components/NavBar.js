@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -19,8 +19,8 @@ const NavBar = () => {
         {/* <span className="float-end text-white mx-2 px-2 py-1" style={{border:'1px solid white', borderRadius:'50%',cursor:'pointer'}}><i className=" fa-regular fa-user fa"></i></span> */}
 
         <div className="flex-shrink-0 dropdown mx-2 mx-lg-3">
-          <a
-            href="#"
+          <Link
+            to="/"
             className="d-block link-body-emphasis text-decoration-none dropdown-toggle dropdown-toggle-no-caret"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -32,30 +32,31 @@ const NavBar = () => {
               height="32"
               className="rounded-circle"
             />
-          </a>
+          </Link>
           <ul className="dropdown-menu text-small shadow">
+          {/* 'My Task' only view for employee */}
             <li>
-              <a className="dropdown-item" href="#">
-                New project...
-              </a>
+              <Link className="dropdown-item" to="/">
+                My Task
+              </Link>
             </li>
             <li>
-              <a className="dropdown-item" href="#">
+              <Link className="dropdown-item" to="/">
                 Settings
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="dropdown-item" href="#">
+              <Link className="dropdown-item" to="/">
                 Profile
-              </a>
+              </Link>
             </li>
             <li>
               <hr className="dropdown-divider" />
             </li>
             <li>
-              <a className="dropdown-item" href="#">
+              <Link className="dropdown-item" to="/logOut">
                 Sign out
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
